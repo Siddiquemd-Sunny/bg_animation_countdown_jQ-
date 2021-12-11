@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    text-align: center;
+    width: 1000px;
+    height: 500px;
+    margin: 100px auto;
+
+}
+
+.main h4 {
+    font-size: 34px;
+    text-transform: capitalize;
+}
+
+
+
+div#getting-started {
+    background-color: #ff7720;
+    color: #fff;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    animation: changeBg 10s linear infinite;
+}
+@keyframes changeBg {
+    0%{
+        background-color: red;
+    }
+    20%{
+        background-color: yellow;
+    }
+    40%{
+        background-color: blueviolet;
+    }
+    60%{
+        background-color: yellowgreen;
+    }
+    80%{
+        background-color: green;
+    }
+    100%{
+        background-color: lime;
+    }
+}
+.single-counter {
+    width: 20%;
+    padding: 40px 0;
+}
+
+.single-counter h4 {
+    font-size: 28px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.single-counter span {
+    display: block;
+    font-size: 62px;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+    
+<!-- countdown start -->
+
+<div class="main">
+    <h4>we will be back soon, please stay with us!</h4>
+    
+        <div id="getting-started"></div>
+    </div>
+
+<!-- countdown end -->
+
+<!-- js links -->
+<script src="asssect/js/jQuery1.12.min.js"></script>
+<script src="asssect/js/countdown.js"></script>
+<script type="text/javascript">
+    $("#getting-started")
+   .countdown("2022/2/18",function(event){
+
+     $(this).html(event.strftime(
+         '<div class="single-counter"><h4><span>%W</span>weeks</h4></div><div class="single-counter"><h4><span>%D</span>days</h4></div><div class="single-counter"><h4><span>%H</span>hours</h4></div><div class="single-counter"><h4><span>%M</span>minitues</h4></div><div class="single-counter"><h4><span>%S</span>seconds</h4></div>'
+         ));
+   });
+</script>
+    
+</body>
+</html>
+
+
